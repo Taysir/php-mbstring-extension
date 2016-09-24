@@ -1,0 +1,16 @@
+{
+    "name": "Taysir/php-mbstring-extension",
+    "version": "0.0.1-dev",
+    "authors": [
+        {
+            "name": "Taysir of Rabiah",
+            "email": "Taysir@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "ext-mbstring": "*"
+    },
+    "autoload": {
+        "files": ["lib/mbstring.php"]
+    }
+}
