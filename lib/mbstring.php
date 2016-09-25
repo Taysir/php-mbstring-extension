@@ -1,11 +1,22 @@
 <?php
+/**
+ * 多バイト文字列拡張用関数群
+ *
+ * @author Taysir of Rabiah <Taysir@users.noreply.github.com>
+ * @package extension-functions
+ * @version 0.0.1-dev
+ */
 
 /**
+ * 多バイト文字列の指定文字数での分割
  * 
- * @param string $string
- * @param integer $split_length
- * @param string $encoding
- * @return array | false
+ * str_splitの多バイト文字列版
+ *
+ * @param string $string 分割対象文字列
+ * @param integer $split_length 文字数、省略された場合1が使用される
+ * @param string $encoding エンコーディング、省略された場合mb_internal_encodingが使用される
+ * @return string[]|false string[]: 成功した場合, false: 失敗した場合
+ * @since 0.0.1-dev
  */
 function mb_str_split($string, $split_length = 1, $encoding = null) {
     $_split_length = (integer) $split_length;
@@ -33,6 +44,16 @@ function mb_str_split($string, $split_length = 1, $encoding = null) {
 
 }
 
+/**
+ * 多バイト文字の数値変換
+ *
+ * ordの多バイト文字列版
+ *
+ * @param type $string 対象文字
+ * @param type $encoding エンコーディング、省略された場合mb_internal_encodingが使用される
+ * @return integer 数値化された文字
+ * @since 0.0.1-dev
+ */
 function mb_ord($string, $encoding = null) {
     $_encoding = 2 > func_num_args() ? mb_internal_encoding() : $encoding;
 
@@ -44,6 +65,16 @@ function mb_ord($string, $encoding = null) {
     return $integer;
 }
 
+/**
+ * 数値の多バイト文字変換
+ *
+ * chrの多バイト文字列版
+ * 
+ * @param integer $integer 対象数値
+ * @param string $encoding エンコーディング、省略された場合mb_internal_encodingが使用される
+ * @return string|false 
+ * @since 0.0.1-dev
+ */
 function mb_chr($integer, $encoding = null) {
     $_encoding = 2 > func_num_args() ? mb_internal_encoding() : $encoding;
 
